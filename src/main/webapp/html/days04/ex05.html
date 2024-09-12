@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<style>
+div {
+	background-color: yellow;
+	width: 300px;
+}
+
+span {
+	border: solid 1px red;
+}
+</style>
+<body>
+	<!--
+    [div]
+        ㄴ 다른 html 요소의 컨테이너(용기) 사용.
+
+    [span]
+        ㄴ 다른 html 요소의 컨테이너(용기) 사용.
+-->
+
+	<!-- 이벤트처리 방법 1 : 요소 이벤트처리하는 onXXX 속성 -->
+	<button onclick="demoHide()">숨기기</button>
+	<!-- 이벤트처리 방법 2 -->
+	<button id="btnShow">보이기</button>
+	<br>
+	<div id="demo">
+		<span>이시훈</span><br> <span>김준석</span><br> <span>김재민</span><br>
+	</div>
+
+	<script>
+    var demo = document.getElementById("demo");
+    function demoHide(){
+        demo.style.display = "none";
+    }
+    
+    var btnShow = document.getElementById("btnShow");
+    
+    btnShow.onclick = function(){
+        // alert("이벤트 확인");
+        demo.style.display = "block";
+    }
+ </script>
+
+</body>
+</html>
