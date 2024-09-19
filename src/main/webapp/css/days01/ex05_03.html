@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+	/* 
+        background-color: lightblue;
+        background-image: url("../images/img_tree.gif");
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-attachment: fixed;
+         */
+	background: lightblue url("../images/img_tree.gif") no-repeat right top
+		fixed;
+}
+
+div#top {
+	/*
+            border-width: 1px;
+            border-style: solid;
+            border-color: gray;
+
+			약식
+            border:1px solid gray;
+            */
+	width: 25px;
+	height: 25px;
+	position: fixed; /* 위치 고정 */
+	right: 25px;
+	bottom: 25px;
+}
+
+/* 의사 클래스 */
+div#top:hover {
+	background: black;
+	color: yellow;
+	font-weight: bold;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<!-- #top{top}+h3{css 배경이미지}+lorem+p*50>{.} -->
+	<div id="top">top</div>
+	<h3>css 배경이미지</h3>
+	Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti vitae
+	debitis velit itaque libero, atque dolore facere? Natus expedita quasi
+	quae repellat rem molestias facere architecto non! Accusamus, animi
+	dolorem.
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+<script>
+    // <div id="top">top</div>
+    // js 변수 선언 키워드 : var, let, const
+    const btnTop = document.getElementById("top");
+    btnTop.onclick = function(){
+        // alert("이벤트 확인")
+        document.body.scrollTop=0;
+        document.documentElement.scrollTop=0;
+    }
+
+</script>
+
+</body>
+</html>
