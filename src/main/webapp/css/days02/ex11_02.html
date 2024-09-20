@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    #panel , .flip{
+        background: #4acf50;
+        color:white;
+
+        text-align: center;
+
+        font-size: 16px;
+        padding : 10px;
+
+        margin : auto;
+        border : solid 1px #a6d8a8;
+
+    }
+
+    #panel{
+        display: none;
+    }
+
+    .flip:hover{
+        cursor: pointer;
+        color: red;
+    }
+
+</style>
+</head>
+<body>
+<p class="flip">Click to show panel</p>
+<div id="panel">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio eligendi corporis quos maxime eveniet a in reiciendis ratione ullam. Est optio et ullam. Distinctio, quasi cum alias optio ex tenetur.</p>
+    <p>Quod minus necessitatibus, nemo sit voluptatibus quisquam animi totam tempore atque illo quis quae quo quam! Eum ipsa nostrum numquam deserunt, reiciendis fugit. Deserunt reprehenderit aperiam ad a sint obcaecati?</p>
+    <p>Eaque tempora hic aliquam fuga dicta. Eveniet sapiente officia sunt doloribus repellendus soluta velit praesentium, aspernatur provident quibusdam molestias qui minima accusantium earum debitis? Qui autem quas at dolores dolor!</p>
+</div>
+XXX
+
+<script>
+
+let sw = true;
+    $("p.flip").on("click",function(){
+        $("div#panel").toggle();
+    })
+
+/*
+    let sw = true;
+    $("p.flip").on("click",function(){
+        if( sw ){
+            $("div#panel").show();
+        }else{
+            $("div#panel").hide();
+        }
+        sw = !sw;
+    })
+*/
+</script>
+
+</body>
+</html>
