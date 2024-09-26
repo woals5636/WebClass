@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Jam HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+  </xmp>
+<!-- 
+  <button>Turn ON</button>
+  <button>Turn OFF</button>
+  <br>
+  <img src="../images/pic_bulbon.gif" alt="">
+  <img src="../images/pic_bulboff.gif" alt="">
+-->
+  <script>
+    // <body> 태그 가져오는 법 document.body
+    // document.querySelector("body")
+    const btnTurnOn = document.createElement("button");
+    btnTurnOn.innerText = "Turn ON";
+    document.querySelector("body > div").appendChild(btnTurnOn);
+
+    const btnTurnOff = document.createElement("button");
+    btnTurnOff.innerText = "Turn OFF";
+    // btnTurnOff.setAttribute("style","display:none");
+    btnTurnOff.style.display = "none";
+    document.querySelector("body > div").appendChild(btnTurnOff);
+    document.querySelector("body > div").appendChild(document.createElement("br"));
+
+    const imgBulb = document.createElement("img");
+    // imgBulb.src = ""
+    imgBulb.setAttribute("src","../images/pic_bulboff.gif");
+    imgBulb.setAttribute("alt","bulboff");
+    document.querySelector("body > div").appendChild(imgBulb);
+  </script>
+
+  <script>
+    btnTurnOff.style.display = "none";
+  
+    btnTurnOn.addEventListener("click",function(){
+      bulb_onoff(true);
+      /*
+      imgBulb.setAttribute("src","../images/pic_bulbon.gif")
+
+      btnTurnOn.style.display = "none";
+      btnTurnOff.style.display = "inline";
+      */
+    })
+
+    btnTurnOff.addEventListener("click",function(){
+      bulb_onoff(false);
+      /*
+      imgBulb.setAttribute("src","../images/pic_bulboff.gif")
+
+      btnTurnOn.style.display = "inline";
+      btnTurnOff.style.display = "none";
+      */
+    })
+
+    function bulb_onoff(flag){
+      // imgBulb.setAttribute("src","../images/pic_bulb"+(flag?"on":"off")+".gif");
+      imgBulb.setAttribute("src",`../images/pic_bulb${flag?"on":"off"}.gif`);
+      
+      btnTurnOn.style.display = flag?"none":"inline";
+      btnTurnOff.style.display = flag?"inline":"none";
+    }
+
+  </script>
+</div> 
+</body>
+</html>

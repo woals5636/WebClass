@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<link rel="stylesheet"
+	href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+span.material-symbols-outlined {
+	vertical-align: text-bottom;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#" style="position: absolute; top: 30px;">Jam HOme</a>
+		</h1>
+		<ul>
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">회원가입</a></li>
+		</ul>
+	</header>
+	<div>
+		<xmp class="code"> </xmp>
+		<!DOCTYPE html>
+		<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bulb On/Off</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- jQuery 추가 -->
+</head>
+<body>
+	<div></div>
+	<script>
+		/*
+		let htmlString =
+		  `
+		    <button id="btnTurnOn">Turn ON</button>
+		    <button id="btnTurnOff" style="display:none;">Turn OFF</button>
+		    <br>
+		    <img id="imgBulb" src="../../javascript/images/pic_bulboff.gif" alt="bulboff">
+		  `;
+		  $("body > div").append(htmlString);
+		 */
+
+		// 버튼 생성 및 추가
+		$("body > div").append('<button id="btnTurnOn">Turn ON</button>');
+		$("body > div").append('<button id="btnTurnOff" style="display:none;">Turn OFF</button>');
+		$("body > div").append('<br>');
+
+		// 이미지 추가
+		$("body > div").append('<img id="imgBulb" src="../../javascript/images/pic_bulboff.gif" alt="bulboff">');
+	</script>
+
+	<script>
+		// Turn ON 버튼 클릭 이벤트
+		$("#btnTurnOn").on("click", function() {
+			bulb_onoff(true);
+		});
+
+		// Turn OFF 버튼 클릭 이벤트
+		$("#btnTurnOff").on("click", function() {
+			bulb_onoff(false);
+		});
+
+		// 전구 켜고 끄는 함수
+		function bulb_onoff(flag) {
+			$("#imgBulb").attr("src",`../../javascript/images/pic_bulb${flag ? "on" : "off"}.gif`);
+			// $("#btnTurnOn").css("display", flag ? "none" : "inline");
+			// $("#btnTurnOff").css("display", flag ? "inline" : "none");
+
+      $("#btnTurnOn").toggle();
+      $("#btnTurnOff").toggle();
+		}
+	</script>
+</body>
+		</html>
+
+
+	</div>
+</body>
+</html>
