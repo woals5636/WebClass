@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Jam HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+                         
+  </xmp>
+
+  <button>실행</button>
+  <p id="demo" style="border:1px solid"></p>
+
+  <script>
+    let content = "";
+    content += "<table border='1' style='width:300px'>    ";
+    content += "  <tr>                                    ";
+    content += "    <td>Lorem.</td>                       ";
+    content += "    <td>Eius!</td>                        ";
+    content += "    <td>Maxime.</td>                      ";
+    content += "  </tr>                                   ";
+    content += "  <tr>                                    ";
+    content += "    <td>Lorem.</td>                       ";
+    content += "    <td>Dolores!</td>                     ";
+    content += "    <td>Beatae?</td>                      ";
+    content += "  </tr>                                   ";
+    content += "  <tr>                                    ";
+    content += "    <td>Lorem.</td>                       ";
+    content += "    <td>Earum?</td>                       ";
+    content += "    <td>Tempore.</td>                     ";
+    content += "  </tr>                                   ";
+    content += "</table>                                  ";
+    
+  /*
+    html문서가 로드된 후에
+    document.write()를 사용하면
+    기본 html 이 모두 삭제된다.
+
+    테스트 용도로 사용을 많이 함
+  */
+    document.querySelector("button").onclick=()=>{
+      document.write(content);
+    }
+
+  </script>
+</div> 
+</body>
+</html>

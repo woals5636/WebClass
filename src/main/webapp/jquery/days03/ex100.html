@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+<script>
+
+  $(document).ready(function(){
+    $("button") // button:first   jquery selector
+    .first()    //                jquery method
+    .on("click",function(){
+      alert("button 1");
+    })
+
+    // :first :last 선택자 (selector) css selector X , jquery selector O
+    $("button:last")
+    // .last()
+    .on("click",function(){
+      // alert("button 2");
+      // 버튼2 를 클릭할 때 버튼1의 click 이벤트를 발생
+      // 이벤트 트리거
+      // prev() / next()
+      $(this).prev().click();
+    })
+  });
+
+</script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Jam HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+                         
+  </xmp>
+
+  <button>버튼 1</button>
+  <button>버튼 2</button>
+
+</div> 
+</body>
+</html>
