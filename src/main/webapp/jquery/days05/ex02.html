@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Jam HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+                         
+  </xmp>
+  <table id="tblDept">
+    <thead>
+       <tr>
+          <th><input type="checkbox" class="all"> 모두 선택</th>
+          <th>Name</th>
+          <th>Loc</th>
+       </tr>
+    </thead>
+    <tbody>
+       <tr>
+          <td><input type="checkbox" id="ck1"></td>
+          <td>Quam.</td>
+          <td>Sapiente.</td>
+       </tr>
+       <tr>
+        <!-- data-이름="값" -->
+          <td><input type="checkbox" id="ck2" data-name='Consequatur!'></td>
+          <td>Consequatur!</td>
+          <td>Nisi.</td>
+       </tr>
+       <tr>
+          <td><input type="checkbox" id="ck3"></td>
+          <td>Tenetur!</td>
+          <td>Modi.</td>
+       </tr>
+       <tr>
+          <td><input type="checkbox" id="ck4"></td>
+          <td>Earum.</td>
+          <td>Officiis.</td>
+       </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+         <td colspan="3" align="center">
+           <button>선택 확인</button>
+         </td>
+        </tr>
+    </tfoot>
+ </table>
+ 
+ <p id="demo"></p>
+</div> 
+
+<script>
+  const demo = $("#demo");
+  const allCkb = $("thead input.all"); // $(":checkbox.all")
+  const ckbs = $("tbody input[id^='ck']"); // $(":checkbox:not(.all)")
+  const btn = $("button");
+
+  // allCkb 체크박스 클릭 이벤트 처리
+  allCkb.on("click", function() {
+    ckbs.prop("checked", this.checked);
+  });
+
+  // 개별 ckbs 클릭 이벤트 처리
+  ckbs.on("click", function() {
+    let count = ckbs.length;
+    let checkedCount = $(":checkbox:not(.all):checked").length;
+
+    allCkb.prop("checked", count == checkedCount ? true : false);
+    /*
+    let isCkbsAllChecked = true;
+    ckbs.each(function() {
+      if (!$(this).is(":checked")) {
+        isCkbsAllChecked = false;
+        return false; // 체크되지 않은 항목을 찾으면 루프 종료
+      }
+    });
+    allCkb.prop("checked", isCkbsAllChecked);
+    */
+  });
+
+  // 버튼 클릭 이벤트 처리
+  btn.on("click", function() {
+    const ul = $("<ul></ul>");
+
+    $(":checkbox:not(.all):checked").each(function(index,element){
+      let name = $(element).parent().next().text();
+      ul.append(`<li>${ name }</li>`);
+    });
+
+    demo.empty().append(ul);
+
+    /*
+    ckbs.each(function() {
+      if ($(this).is(":checked")) {
+        const li = $("<li></li>").text($(this).parent().next().text());
+        demo.empty().append(li);
+      }
+    });
+    */
+  });
+</script>
+
+
+</body>
+</html>

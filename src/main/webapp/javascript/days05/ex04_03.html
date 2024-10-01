@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Jam HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    [js 문자열 메서드]
+    String toUpperCase()
+    String toLowerCase()
+
+    String concat()
+
+    String trim()
+    String trimStart()
+    String trimEnd()
+
+    String padStart()
+    String padEnd()
+
+    String repeat()
+
+    String replace()
+    String replaceAll()
+
+    String split()               
+  </xmp>
+</div> 
+
+<script>
+  /*
+  let a = "Hello World";
+  let b = a.toUpperCase();  // HELLO WORLD
+  let b = a.toLowerCase();  // hello world
+  alert(b);
+  */
+  /*
+  let a = "hello";
+  let b = "world";
+  // c = "hello world";
+  // let c = `${a} ${b}`;
+  // let c = a + " " + b;
+  let c = a.concat(" ").concat(b);
+  alert(c);
+  */
+  /*
+  String trim()
+  Strimg trimStart()
+  String trimEnd()
+  */
+  /*
+  let t = " helow world     "
+  // t = t.trim(); // 앞뒤 공백 제거
+  // alert(`[${t}]`); // [helow world]
+
+  t = t.trimStart(); // 앞 공백 제거
+  alert(`[${t}]`); // [helow world     ]
+  
+  t = t.trimEnd(); // 뒤 공백 제거
+  alert(`[${t}]`); // [ helow world]
+  */
+  /*
+  String padStart()
+  String padEnd()
+  */
+  /*
+  let no = "15";
+
+  alert(no.padStart(4,"0"));
+  */
+  //  "0015"
+  /*
+  no = "0".repeat(4-no.length).concat(no);
+  alert(no);
+
+  no.length == 2;
+  "00"
+  */
+
+  /*
+  let x = "";
+  for (let i = 0; i < 4 - no.length; i++) {
+    x += "0"
+  }
+  x += no;
+  */
+
+  let msg = "홍길동님 안녕하세요. 홍길동입니다."
+  // alert(msg.replace(/홍길동/g,"XXX"));  // 정규표현식을 사용하여 수정
+
+  // alert(msg.replace("홍길동","XXX"));
+  // alert(msg.replaceAll("홍길동","XXX"));
+  
+    
+</script>
+
+</body>
+</html>

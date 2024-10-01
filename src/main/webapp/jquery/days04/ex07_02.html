@@ -46,65 +46,72 @@ span.material-symbols-outlined {
 	</div>
 
 	<script>
-		let txt1 = document.querySelector("input[type=text]:first-of-type");
-		let txt2 = document.querySelector("input[type=text]:nth-of-type(2)");
-		let txt3 = document.querySelector("input[type=text]:last-of-type");
-		let opCmb = document.querySelector("#operator");
-
-		txt1.onkeydown = function() {
-			if (!(event.keyCode >= 48 && event.keyCode <= 57
-					|| event.keyCode == 8 || event.keyCode == 13 || event.keyCode == 229)) {
+		$(":text").first().on("keydown",function(event){
+			if (!(event.which >= 48 && event.which <= 57
+					|| event.which == 8 || event.which == 13 || event.which == 229)) {
 				alert("숫자만 입력하세요...");
 				event.returnValue = false;
 			}
-			if (event.keyCode == 13) {
-				txt2.focus();
+			if (event.which == 13) {
+				n1 = $(this).val();
+				$(":text").eq(1).focus();
 			}
-		}
+		});
 
-		txt2.onkeydown = function() {
-			if (!(event.keyCode >= 48 && event.keyCode <= 57
-					|| event.keyCode == 8 || event.keyCode == 13 || event.keyCode == 229)) {
+		$(":text").eq(1).on("keydown",function(which){
+			if (!(event.which >= 48 && event.which <= 57
+					|| event.which == 8 || event.which == 13 || event.which == 229)) {
 				alert("숫자만 입력하세요...");
 				event.returnValue = false;
 			}
-			if (event.keyCode == 13) {
-				this.previousElementSibling.focus();
+			if (event.which == 13) {
+				n2 = $(this).val();
+				$(this).prev().focus();
 			}
-		}
+		});
 
-		opCmb.onchange = function() {
+
+		$("#operator").on("change",function(){
+			let op = $(this).val();
+			let result = eval( n1 + op + n2 );
+			$(":text").last().val(result);
+			$(":text").first().select();
+		});
+
+		/*
+		$("#operator").on("change",function(){
 			let result;
-			switch (this.value) {
+			switch ($(this).val()) {
 			case "+":
-				result = parseInt(txt1.value) + Number(txt2.value);
+				result = parseInt($(":text").first().val()) + Number($(":text").eq(1).val());
 				break;
-
+	
 			case "-":
-				result = parseInt(txt1.value) - Number(txt2.value);
+				result = parseInt($(":text").first().val()) - Number($(":text").eq(1).val());
 				break;
-
+	
 			case "*":
-      result = parseInt(txt1.value) * Number(txt2.value);
-				break;
-
+				result = parseInt($(":text").first().val()) * Number($(":text").eq(1).val());
+						break;
+			
 			case "/":
-      result = parseInt(txt1.value) / Number(txt2.value);
-      break;
-
+				result = parseInt($(":text").first().val()) / Number($(":text").eq(1).val());
+			break;
+			
 			case "%":
-      result = parseInt(txt1.value) % Number(txt2.value);
-      break;
-
+				result = parseInt($(":text").first().val()) % Number($(":text").eq(1).val());
+			break;
+			
 			case "**":
-      result = parseInt(txt1.value) ** Number(txt2.value);
-      break;
-
+				result = pparseInt($(":text").first().val()) ** Number($(":text").eq(1).val());
+			break;
+			
 			default:
 				break;
 			}
-      txt3.value=result;
-		}
+			$("input[type=text]:last-of-type").val(result);
+		});
+		*/
 	</script>
 
 </body>
