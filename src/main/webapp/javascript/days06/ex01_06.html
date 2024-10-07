@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Jam HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    [ 배열 검색 메서드 ]
+    Array indexOf()
+    Array lastIndexOf()
+    Array includes()
+    
+    Array find()
+    Array findIndex()
+    Array findLast()
+    Array findLastIndex()               
+  </xmp>
+</div> 
+<script>
+  const m = [27, 28, 30, 40, 42, 35, 30];
+
+  let index, n;
+  n = m.find((element)=> element > 29 );
+  index = m.findIndex((element)=> element > 29 );
+  document.write(`n = ${n} index = ${index} <br>`)
+
+  n = m.findLast((element)=> element > 29 );
+  index = m.findLastIndex((element)=> element > 29 );
+  document.write(`n = ${n} index = ${index} <br>`)
+
+  // m 배열에서 32보다 큰 요소의 위치값과 정수
+  /*
+  for (let i = 0; i < m.length; i++) {
+    if(m[i] > 32){
+      console.log(m[i]);
+    };
+  }
+
+  m.forEach((value, index) => {
+    if (value > 32) {
+     console.log(value);
+    }
+  });
+
+  */
+  // let index = m.indexOf( 30 ); // 2
+  // let index = m.lastIndexOf( 30 ); // 6
+  // let index = m.lastIndexOf( 300 ); // -1
+  // let index = m.includes(300); // false
+  // alert( index );
+</script>
+</body>
+</html>

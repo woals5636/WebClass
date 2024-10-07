@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Jam HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+  </xmp>
+</div> 
+<script>
+  // [문제] 이번 달의 마지막 날짜?
+  /*
+  const date = new Date();
+  const t = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+  document.write(t.getDate());
+  */
+
+  // [문제]
+  const rrn = "870412-1700001";
+  // 생일 O / X / 오늘
+
+  const today = new Date();
+  let tYear = today.getFullYear()
+  today.setHours(0);
+  today.setMinutes(0);
+  today.setSeconds(0);
+  today.setMilliseconds(0);
+
+  // js slice() / substring() / substr()
+  let month = rrn.substr(2,2);
+  let date = rrn.substr(4,2);
+  const b = new Date(tYear,month-1,date);
+  // document.write(b.toLocaleString()+"<br>");
+  // document.write(today.toLocaleString()+"<br>");
+
+  document.write(b.getTime() + "<br>");
+  document.write(today.getTime() + "<br>");
+  document.write(b.getTime()=today.getTime() ? "생일": "생일아님");
+
+
+</script>
+</body>
+</html>
