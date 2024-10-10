@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Jam HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    [js 중첩함수 이해...]
+     ㄴ 중첩함수 ? 함수 안에 함수
+     ㄴ 모든 함수에서 전역변수 접근 가능
+     ㄴ 상위 범위 변수 접근 가능
+  </xmp>
+
+  <button>count!!</button>
+  <p id="demo"></p>
+</div> 
+<script>
+  /*
+  function add(){
+    let counter = 0; // 지역변수
+    // 중첩함수
+    function plus(){
+      // 부모 함수의 변수 접근 가능
+      counter ++;
+    } // plus
+    plus();
+
+    return counter;
+  } // add
+
+  document.querySelector("button").addEventListener("click",function(){
+    // add() -> plus() -> counter 1 증가 -> counter 리턴
+    document.querySelector("#demo").innerHTML = add();
+  });
+  */
+</script>
+<script>
+  /*
+  let counter = 0; // global variable
+  let plus = function(){
+    counter++;
+    return counter;
+  }
+
+  plus();
+  plus();
+  plus();
+  plus();
+  alert(counter); // 3
+  */
+</script>
+<script>
+  let btn = document.querySelector("button");
+  let num = document.querySelector("#demo");
+
+  //          자체 호출 함수
+  let plus = (function(){
+    let counter = 0;    // local variable → 중첩함수로 전역변수처럼 사용
+    return function (){ // 중첩함수 Nested Function
+      counter++;
+      return counter;
+    };
+  })();
+
+  btn.addEventListener("click",function(){
+    num.innerHTML = plus();
+  });
+</script>
+</body>
+</html>
