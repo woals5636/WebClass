@@ -2,11 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insert title here</title>
 <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google" content="notranslate">
 <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
 <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
 <style>
@@ -16,16 +15,17 @@
 </style>
 <style>
   #container{
-    width: 400px;
-    height: 400px;
-    position: relative;
-    background-color: yellow;
+    width:400px;
+    height:400px;
+    position:relative;
+    background-color:yellow;
   }
-  #animate{
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    background-color: red;
+  
+  .animate{
+    width:50px;
+    height:50px;    
+    position:absolute;    
+    background-color:red;
     border-radius: 50%;
   }
 </style>
@@ -38,38 +38,61 @@
     <li><a href="#">회원가입</a></li>
   </ul>
 </header>
+<h3>
+  <span class="material-symbols-outlined">view_list</span>javascript days00
+</h3>
 <div>
   <xmp class="code">
-                         
-  </xmp>
-
-  <button onclick="myMove();">Click Me</button>
+  
+  </xmp> 
+  
+  <button onclick="make();">Click Me</button>
   <br>
   <br>
-
   <div id="container">
-    <div id="animate"></div>
-  </div>
-</div> 
+</div>
+
 <script>
-  function myMove(){
-    let elem = document.querySelector("#animate");
-    // left, top
-    let pos = 0;
-    let timer = setInterval(function(){ // nested function
-
-      if (pos > 350) {
-        pos = pos - 350;
-        elem.style.left = pos-"px";
-        elem.style.top = pos-"px";
-      }else{
-        pos = pos + 5;
-        elem.style.left = pos+"px";
-        elem.style.top = pos+"px";
-      }
-
-    },10);
-  }
+    let no = 1;
+    function make() {
+       // <div class="animate" id="animate1"></div> 
+       let newCircle = document.createElement("div");
+       //newCircle.classList.add("animate");
+       newCircle.className = "animate";
+       // newCircle.id = "animate" + no;
+       newCircle.setAttribute("id", "animate" + no);      
+       document.getElementById("container").appendChild(newCircle);
+       myMove( newCircle );   //Element요소
+       // myMove( id  ) : id 속성
+       no++;
+   } // make
+   
+   function myMove( elem ) {
+        //var elem = document.getElementById("animate");
+        // left , top 이동
+        var posX = 0 , posY = 0;
+        
+        var x = parseInt( Math.random()*8 )+2;
+        var y = parseInt( Math.random()*8 )+2;
+        
+        var timer = setInterval(function() { 
+           
+           if ( posY >= 350 || posY <= 0 )  y *= -1;  // y 방향 바꾼다.
+           if ( posX >= 350 || posX <= 0 )  x *= -1;           
+            
+                posX += x;  // 6
+                posY += y; // 9
+                
+                if(  posX < 0  ) posX = 0;
+                else if( posX > 350 ) posX = 350;
+                if(  posY < 0  ) posY = 0;
+                else if( posY > 350 ) posY = 350;
+                
+                elem.style.left = posX+"px";
+                elem.style.top = posY+"px";
+            
+        }, 10);
+     } // myMove
 </script>
 </body>
 </html>
