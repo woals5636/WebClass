@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Jam HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+  </xmp>
+  <table border="1">
+    <tr>
+      <td>Lorem.</td>
+      <td></td>
+      <td>Tempora.</td>
+      <td>Pariatur.</td>
+    </tr>
+    <tr>
+      <td>Lorem.</td>
+      <td>Corporis.</td>
+      <td>Sequi.</td>
+      <td>Autem.</td>
+    </tr>
+    <tr>
+      <td>Lorem.</td>
+      <td>Necessitatibus.</td>
+      <td></td>
+      <td>Nulla!</td>
+    </tr>
+    <tr>
+      <td>Lorem.</td>
+      <td>Sint?</td>
+      <td>Quod.</td>
+      <td>Rem.</td>
+    </tr>
+    <tr>
+      <td>Lorem.</td>
+      <td></td>
+      <td></td>
+      <td>Quos!</td>
+    </tr>  
+  </table>
+
+  <p>Lorem ipsum dolor sit amet.</p>
+  <p>Id ipsam porro nobis ipsa?</p>
+  <p style="display: none;">Odit officiis veniam mollitia eius!</p>
+  <p>Similique, repellat earum. Esse, beatae.</p>
+  <p>In cupiditate consectetur nisi sequi?</p>
+</div> 
+<script>
+  // 내용이 없는 td의 배경색 빨강
+  // $("td:empty").css("background-color","red");
+  // 내용이 있는 td의 배경색 파랑
+  // $("td").not("td:empty").css("background-color","blue");
+
+  // 자식(내용)이 있는 부모 td
+  // $("td:parent").css("background-color","lightgreen");
+
+  // $(":root") == html 태그
+  // $("p:hidden").css("background-color","lightblue");
+  $("p:hidden").show(5000, function(){
+    $("p:visible").hide(5000);
+  });
+
+</script>
+</body>
+</html>

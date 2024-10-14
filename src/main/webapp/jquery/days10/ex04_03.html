@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+<style>
+  #panel,   #flip{
+      padding: 5px;
+      font-size: 18x;
+      text-align: center;
+      color:white;
+      background-color: #555;
+      border:1px solid #666;
+      border-radius:3px
+  }
+  #panel{
+     padding: 50px;
+     display: none;  
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Jam HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    [ 애니메이션 효과 중지 메서드 : stop() ]
+    현재 진행 중인 애니메이션을 중지하는 메서드
+    stop( stopAll, goToEnd );
+           t / f     t / f
+           기본값    기본값
+           false     false
+    stop(false, false) == stop()
+
+    stopAll 매개변수
+     false 진행중 애니멧이션 중지
+     true 진행중 X, 대기열의 남은 애니메이션 모두 중지
+
+     goToEnd
+      false
+      true
+      
+    </xmp>
+
+    <button id="stop">Stop Sliding</button>
+    <button id="flip">Click to Slide Donw panel</button>
+    <button id="panel">Hello World</button>
+</div> 
+
+<script>
+  //stop(stopAll, goToEnd)
+  //현재 진행중인 애니메이션을 중지하는 
+  $("#flip").on("click", function(){
+    $("#panel").slideDown(7000);
+  })
+  $("#stop").on("click", function(){
+    $("#panel").stop(false, false);
+  })
+</script>
+
+
+</body>
+</html>

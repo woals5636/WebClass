@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Jam HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     쿠키 생성
+     쿠키 수정
+     쿠키 삭제
+     쿠키 조회
+
+     js 쿠키 : document.cookie 속성 사용  생성수정삭제조회 작업을 다 할수 있다
+
+     (참고)
+     일부 브라우저에서는 _path을 설정하짐 이으면 삭제 허용하지 않는 경우도 있다.
+  </xmp>
+  쿠키이름: <input type="text" id="cookieName" autofocus="autofocus"><br>
+  쿠키값 : <input type="text" id="cookieValue"><br>
+  <br>
+  <button onclick="setCookie()">쿠키생성 </button>
+  <button onclick="getAllCookies()">쿠키조회 </button>
+  <button onclick="getCookie()">쿠키확인 </button>
+  <button onclick="delCookie()">쿠키삭제 </button>
+  <br>
+  <p id="demo"></p>
+
+  <script>
+
+    function delCookie(){
+      // 1. 만료시점을 설정하지 않으면 세션이 끊어질 때
+      //    자동으로 쿠키는 삭제 ( 브라우저를 닫을 때 )
+      // 2. 만료시점이 지난 경우에는 쿠키는 삭제
+      //    만료시점 + 10일 => 만료시점을 과거로 설정해서
+      //    다시 쿠키를 생성하면 쿠키는 삭제가 된다.
+
+      let cname = $("#cookieName").val();
+
+      let now = new Date();
+      now.setDate( now.getDate() - 10 );
+      let expires = now.toUTCString();
+
+      document.cookie = `${cname}=; expires=${expires}; path=/`;
+
+      //입력받은 값 초기화
+      $("#cookieName").val("");
+      $("#cookieValue").val("");
+    }
+
+    function getCookie(){
+      // "id=admin; age=20;"
+      let cookies = document.cookie;
+
+      let cname = $("#cookieName").val();
+      let cvalue;
+
+      //
+      let pattern = /;\s/;
+      let cookieArr = cookies.split(pattern);
+      cookieArr.forEach(function(elemt, index, array){
+        let cnvArr = elemt.split("=");
+        if( cnvArr[0] == cname ){
+          cvalue = unescape( cnvArr[1] );
+        };
+      })
+
+      if(cvalue){
+        $("#cookieValue").val( cvalue );
+      }else {
+        alert("존재하지 않는 쿠키이름이다. ");
+      }
+    }
+
+        //모든 쿠키값을 가져오는 함수
+    function getAllCookies(){
+      let cookies = document.cookie;
+      $("#demo").html(cookies);
+
+    }
+
+    function setCookie(){
+      let cname = $("#cookieName").val();
+      let cvalue = $("#cookieValue").val();
+
+
+      //js escape()/unescape()
+      //홍길동 -> %uD64D %uAE38 %uB3D9  - 쿠키값에 한글이 있는 경우에는 %uXXXXX 변환해서 쿠키저장
+      // $("#demo").html(escape(cvalue));
+
+      //만기날짜
+      let now = new Date();
+      now.setDate(now.getDate()+10);
+      let expires = now.toUTCString();
+
+      // 쿠키를 저장하는 코딩
+      document.cookie = `${cname}=${escape(cvalue)}; expires=${expires}; path=/`;
+      //입력받은 값 초기화
+      $("#cookieName").val("");
+      $("#cookieValue").val("");
+    }
+
+
+
+  </script>
+
+</div> 
+</body>
+</html>
