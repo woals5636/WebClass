@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google" content="notranslate">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }  
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Jam HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    [jquery DOM 조작]
+    1. 내용(content) 조작
+     js innerText   jq text()
+        innerHTMl      html()
+        value          val()
+
+    2. 속성 조작
+     js setAttribute()  jq attr()
+        getAttribute()     prop()
+        객체명.속성명
+    
+    3. 새로운 요소 추가.
+     js createElement() jq append() / appendTo()
+        appendChild()      prepend() / prependTo()
+
+                           before() 선택한 요소 앞에 추가
+                           after() 선택한 요소 뒤에 추가
+    
+    4. 요소 제거
+       empty()
+       remove()
+
+    5. jquery CSS 조작
+       addClass()
+       removeClass()
+       toggleClass()
+       css()
+
+    6. width()          height()
+       innerWidth()     innerHeight()
+       outerWidth()     outerHeight()
+       outerWidth(true) outerHeight(ture)
+  </xmp>
+  <h3> h3 태그 설명</h3>
+
+  <script>
+    //Uncaught TypeError: $(...).myAlert is not a function
+    // jquery 객체가 사용할 수 있는 myAlert() 함수 등록
+    // 속성, 메서드 등록
+    // $ == jQuery == window.jQuery
+
+    // prototype 객체 생성자를 사용해서 속성, 메서드 추가
+    // $.prototype.속성
+    // $.prototype.메서드
+    // $.fn == $.prototype
+    /*
+    $.fn.myAlert = function(msg){
+      alert(`${msg}`);
+    }
+    
+    $("h3").myAlert("사용자 만든 경고창!!");
+    */
+  </script>
+  <script>
+    // 모든 자식 요소를 제거
+    // $("xmp.code").empty();
+    // $("xmp.code").html("");
+
+    // 요소 자체를 제거
+    // $("xmp.code").remove();
+
+    // $("xmp.code")
+    //       .before("<b>앞<b>")
+    //       .after("<b>뒤<b>");
+
+  </script>
+</div> 
+</body>
+</html>
